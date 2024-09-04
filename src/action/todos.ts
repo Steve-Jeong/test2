@@ -11,3 +11,9 @@ export const createTodo = async (formData: FormData) => {
     },
   });
 };
+
+export const getTodos = async () => {
+  const todos = await prisma.todos.findMany()
+
+  return todos
+}

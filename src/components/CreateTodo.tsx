@@ -1,16 +1,13 @@
-import { createTodo } from "@/action/todos";
-import { revalidatePath } from "next/cache";
- 
+'use client'
+import { formAction } from "@/action/todos" 
+
+
 const CreateTodo = () => {
-  const formAction = async (formData : FormData) => {
-    await createTodo(formData)
-    revalidatePath('../')
-  }
 
   return (
     <div className="max-w-sm mx-auto flex flex-col gap-4 outline outline-blue-300">
       <div className="mx-auto"><h1 className="text-lg text-gray-900">Todos</h1></div>
-      <form action={createTodo} className="flex  flex-col gap-4 outline outline-teal-300">
+      <form action={formAction} className="flex  flex-col gap-4 outline outline-teal-300">
         <input
           type="text"
           name="title"

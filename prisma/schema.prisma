@@ -85,7 +85,8 @@ model Authenticator {
 }
 
 model Todos {
-  id        Int      @id @default(autoincrement())
-  title     String
+  id            Int      @id @default(autoincrement())
+  title         String
+  password      String?   
   createTododAt DateTime @default(now())
 }
